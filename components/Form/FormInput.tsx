@@ -1,7 +1,7 @@
 import React from 'react';
 
 interface Props {
-  type: string;
+  type: 'email' | 'password';
   value?: string;
   onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }

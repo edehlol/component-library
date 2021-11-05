@@ -1,17 +1,11 @@
 import type { NextPage } from 'next';
-import Head from 'next/head';
-import Image from 'next/image';
-import styles from '../styles/Home.module.css';
 import { BsFacebook } from 'react-icons/bs';
 import { FcGoogle } from 'react-icons/fc';
 import React, { useState } from 'react';
-import classNames from 'classnames';
-import { Button } from '../components/Button';
 import { Heading } from '../components/Heading';
 import { Divider } from '../components/Divider';
 import Form from '../components/Form/Form';
-
-const Icon = ({ icon }: { icon: React.ReactNode }) => <span className="text-lg mr-2">{icon}</span>;
+import Button from '../components/Button/Button';
 
 const Home: NextPage = () => {
   const [email, setEmail] = useState('');
@@ -47,12 +41,16 @@ const Home: NextPage = () => {
           <Divider>Log in with social</Divider>
 
           <Button variant={Button.variant.FACEBOOK}>
-            <Icon icon={<BsFacebook />} />
+            <Button.Icon>
+              <BsFacebook />
+            </Button.Icon>
             Continue with Facebook
           </Button>
 
           <Button variant={Button.variant.GOOGLE}>
-            <Icon icon={<FcGoogle />} />
+            <Button.Icon>
+              <FcGoogle />
+            </Button.Icon>
             Continue with Google
           </Button>
         </Form>
